@@ -1,41 +1,39 @@
-body {
-    margin: 0;
-    padding: 0;
-    background-color: black;
-    color: #00ff99;
-    font-family: monospace;
-    text-align: center;
-    overflow: hidden;
-    transition: background 0.2s;
+button {
+  font-size: 2.5vw; /* 반응형 폰트 사이즈 */
+  padding: 2vh 5vw; /* 뷰포트 기준 여백 */
+  background-color: #ff0044;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 15px red;
+  transition: all 0.3s ease;
+  z-index: 10;
+  position: relative;
+  max-width: 90%;
+  min-width: 180px;
+}
+
+/* PC에선 hover 효과 강조 */
+@media (min-width: 1024px) {
+  button:hover {
+    transform: scale(1.1);
   }
-  
-  .container {
-    margin-top: 20vh;
-  }
-  
+}
+
+/* 태블릿 기준 */
+@media (max-width: 1024px) and (min-width: 601px) {
   button {
-    font-size: 2rem;
-    padding: 1rem 2rem;
-    background-color: #ff0044;
-    color: white;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 0 15px red;
-    z-index: 10;
-    position: relative;
+    font-size: 4vw;
+    padding: 3vh 6vw;
   }
-  
-  .unji-effect {
-    animation: spin 2s infinite linear, flash 0.3s infinite alternate;
+}
+
+/* 모바일 기준 */
+@media (max-width: 600px) {
+  button {
+    font-size: 6vw;
+    padding: 4vh 8vw;
+    border-radius: 20px;
   }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
-  @keyframes flash {
-    from { background-color: black; }
-    to { background-color: darkred; }
-  }
-  
+}
