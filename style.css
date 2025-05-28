@@ -1,6 +1,6 @@
 button {
-  font-size: 2.5vw; /* 반응형 폰트 사이즈 */
-  padding: 2vh 5vw; /* 뷰포트 기준 여백 */
+  font-size: 2.5vw;
+  padding: 2vh 5vw;
   background-color: #ff0044;
   color: white;
   border: none;
@@ -12,28 +12,33 @@ button {
   position: relative;
   max-width: 90%;
   min-width: 180px;
+  width: auto;
 }
 
-/* PC에선 hover 효과 강조 */
+/* PC */
 @media (min-width: 1024px) {
   button:hover {
     transform: scale(1.1);
   }
 }
 
-/* 태블릿 기준 */
+/* 태블릿 */
 @media (max-width: 1024px) and (min-width: 601px) {
   button {
     font-size: 4vw;
     padding: 3vh 6vw;
+    min-width: 240px;
+    width: 70vw;
   }
 }
 
-/* 모바일 기준 */
+/* 모바일 */
 @media (max-width: 600px) {
   button {
-    font-size: 6vw;
-    padding: 4vh 8vw;
+    font-size: 7vw;
+    padding: 5vh 8vw;
     border-radius: 20px;
+    min-width: 80vw;
+    width: 85vw;
   }
 }
