@@ -1,44 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: #ff0044;
+  font-family: monospace;
+  text-align: center;
+  overflow: hidden;
+  transition: background 0.2s;
+}
+
+h1 {
+  font-size: 6vw;
+  margin-top: 10vh;
+  animation: shake 0.3s infinite alternate;
+}
+
 button {
-  font-size: 2.5vw;
-  padding: 2vh 5vw;
+  font-size: 7vw;
+  padding: 5vh 10vw;
   background-color: #ff0044;
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 20px;
   cursor: pointer;
   box-shadow: 0 0 15px red;
   transition: all 0.3s ease;
   z-index: 10;
   position: relative;
-  max-width: 90%;
-  min-width: 180px;
-  width: auto;
+  width: 85vw;
+  max-width: 600px;
 }
 
-/* PC */
-@media (min-width: 1024px) {
-  button:hover {
-    transform: scale(1.1);
-  }
+/* 화면 발광+회전 효과 */
+body.unji-effect {
+  animation: spin 2s infinite linear, flash 0.3s infinite alternate;
 }
 
-/* 태블릿 */
-@media (max-width: 1024px) and (min-width: 601px) {
-  button {
-    font-size: 4vw;
-    padding: 3vh 6vw;
-    min-width: 240px;
-    width: 70vw;
-  }
+/* 흔들리는 제목 */
+@keyframes shake {
+  0% { transform: translateX(-5px); }
+  100% { transform: translateX(5px); }
 }
 
-/* 모바일 */
-@media (max-width: 600px) {
-  button {
-    font-size: 7vw;
-    padding: 5vh 8vw;
-    border-radius: 20px;
-    min-width: 80vw;
-    width: 85vw;
-  }
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes flash {
+  from { background-color: black; }
+  to { background-color: darkred; }
 }
