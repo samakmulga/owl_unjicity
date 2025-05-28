@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: #00ff99;
+    font-family: monospace;
+    text-align: center;
+    overflow: hidden;
+    transition: background 0.2s;
+  }
+  
+  .container {
+    margin-top: 20vh;
+  }
+  
+  button {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    background-color: #ff0044;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 15px red;
+    z-index: 10;
+    position: relative;
+  }
+  
+  .unji-effect {
+    animation: spin 2s infinite linear, flash 0.3s infinite alternate;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @keyframes flash {
+    from { background-color: black; }
+    to { background-color: darkred; }
+  }
+  
